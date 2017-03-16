@@ -2,14 +2,16 @@
 
 #### Requirements
 - composer - https://getcomposer.org/download/
-- web server
+- git
+- web server (Apache is preffered. But you can use any.)
 
-#### Install Drupal
-
+#### Install site
+- Set up site, site host, create database twig as usual.
 - <code>cd /path/to/site</code>
+- <code>git clone https://github.com/lyalyuk/drupal-project.git .</code>
 - <code>composer install</code>
 - <code>cd /path/to/site/web</code>
-- <code>../vendor/bin/drush si minimal --account-name=admin --account-pass=developer --db-url=mysql://root:1111@localhost/twig</code>
+- <code>../vendor/bin/drush si minimal --account-name=admin --account-pass=developer -y</code>
 
 #### Update via composer and phing
 
