@@ -1,0 +1,10 @@
+stages:
+  - deploy
+
+development:
+  environment: development
+  stage: deploy
+  script:
+    - cd /var/www/site
+    - git pull origin master
+    - vendor/bin/phing

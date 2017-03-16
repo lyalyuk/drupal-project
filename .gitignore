@@ -8,11 +8,20 @@
 /web/libraries/
 
 # Ignore sensitive information
-/web/sites/*/settings.php
-/web/sites/*/settings.local.php
+#/web/sites/*/settings.php
+#/web/sites/*/settings.local.php
 
 # Ignore Drupal's file directory
-/web/sites/*/files/
+/web/sites/*
+
+# project-specific
+/web/.*
+/web/autoload.php
+/web/index.php
+/web/robots.txt
+/web/update.php
+/web/web.config
+composer.lock
 
 # Ignore SimpleTest multi-site environment.
 /web/sites/simpletest

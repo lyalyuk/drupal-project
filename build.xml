@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Build" default="build" basedir="." description="Build site">
+    <target name="build">
+        <exec command="git pull origin master" dir="." description="Pull updates"  logoutput="true"/>
+        <exec command="composer install --quiet" dir="." description="Install missing composer packages."  logoutput="true"/>
+        <exec command="../vendor/bin/drush -y config-import" dir="web" description="Import drupal configuration."  logoutput="true"/>
+        <exec command="../vendor/bin/drush -y updb" dir="web" description="Run drupal update database hooks."  logoutput="true"/>
+        <exec command="../vendor/bin/drush -y entup" dir="web" description="Run drupal entity update hooks."  logoutput="true"/>
+        <exec command="../vendor/bin/drush cr" dir="web" description="Rebuild cache"  logoutput="true"/>
+    </target>
+</project>
