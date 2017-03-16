@@ -754,9 +754,9 @@ $settings['file_scan_ignore_directories'] = [
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'twig',
-  'username' => 'root',
-  'password' => '1111',
+  'database' => 'twig',  // Put Your database name
+  'username' => 'root',  // Put Your username
+  'password' => '1111',  // Put Your username`s password
   'prefix' => '',
   'host' => 'localhost',
   'port' => '',
