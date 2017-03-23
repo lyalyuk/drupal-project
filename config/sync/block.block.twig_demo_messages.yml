@@ -1,0 +1,22 @@
+uuid: dcc4415f-7a57-41df-a637-4d57b2306022
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - twig_demo
+_core:
+  default_config_hash: 5MNdk3fpMKx_xxBTcz2T11DL4XEU1H5SgHl8BsYdFsA
+id: twig_demo_messages
+theme: twig_demo
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

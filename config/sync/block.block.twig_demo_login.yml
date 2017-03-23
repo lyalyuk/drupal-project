@@ -1,0 +1,22 @@
+uuid: 13711e58-3be8-4c6a-b420-a6c75afb62c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - twig_demo
+_core:
+  default_config_hash: 4QlSnWBcxxKMIFRM8sbu_MjSkcp3NjGgnVrc-lynQHI
+id: twig_demo_login
+theme: twig_demo
+region: sidebar_first
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

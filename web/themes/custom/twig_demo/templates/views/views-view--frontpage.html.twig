@@ -1,0 +1,132 @@
+{#
+/**
+ * @file
+ * Default theme implementation for main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+set someVar = 'someVar variable value'
+%}
+
+{% set input = {
+  name: 'Name',
+  value: 'Ivan',
+  size: '60'
+}
+
+%}
+
+{%
+set classes = [
+dom_id ? 'js-view-dom-id-' ~ dom_id,
+'brands', 'mobile-slider'
+]
+%}
+<div class="brands-wrapper">
+        <h3>{{ 'Nodes List'|t }}</h3>
+        <div{{ attributes.addClass(classes) }}>
+
+
+            {% if header %}
+                <header>
+                    {{ header }}
+                </header>
+            {% endif %}
+
+            {{ exposed }}
+            {{ attachment_before }}
+
+            {% if rows %}
+                <div class="swiper-wrapper">
+            {% endif %}
+                    {{ rows }}
+            {% if rows %}
+                </div>
+            {% endif %}
+
+
+            {{ empty }}
+            {{ pager }}
+
+            {{ attachment_after }}
+            {{ more }}
+
+            {% if footer %}
+                <footer>
+                    {{ footer }}
+                </footer>
+            {% endif %}
+
+            {{ feed_icons }}
+        </div>
+</div>
+
+<h1>Twig Demo</h1>
+
+<h2>Twig syntax Examples</h2>
+<p>Variables output {{ someVar }}</p>
+<p>{# comment #}</p>
+<p>All logic should be wrapped in { &nbsp; %  %}:  </p>
+{% if someVar %}
+  <p>Somevar var is {{ someVar }}</p>
+{% endif %}
+
+<h2>Functions Examples</h2>
+<p>{{ dump(someVar) }}</p>
+<p>{{ random(['apple', 'orange', 'citrus']) }}</p>
+<p>{{ min(5,2,7) }}</p>
+
+<br>
+<a href="http://twig.sensiolabs.org/doc/2.x/functions/index.html">See more functions</a>
+
+
+<h2>Drupal specific filters</h2>
+<ul>
+        <li>|t, |trans translate variables - {{ 'translate this var'|t }}</li>
+        <li>|safe_join - Joins also renderable arrays {{ [1,2,3]|safe_join('-') }}</li>
+        <li>|without - exclude array elements {{ [1,2,3]|without(1)|safe_join('-') }}</li>
+        <li>|format_date - Drupal-friendly date format {{ date().timestamp|format_date('html_date') }}</li>
+        <li>...</li>
+</ul>
+<h2>Drupal specific functions</h2>
+<ul>
+        <li>file_url: {{ file_url('core/modules/system/tests/modules/twig_theme_test/twig_theme_test.js') }}</li>
+        <li>url() - build url from route - {{ url('user.register', {}, {'absolute': true })  }} </li>
+        <li>link via the linkgenerator: {{ link('register', 'route:user.register', {'id': 'register'}) }}</li>
+        <li>attach_library() - Attach drupal library - {{ attach_library('classy/forum') }} </li>
+</ul>
+
+<h2>Links</h2>
+<ul>
+        <li><a href="http://twig.sensiolabs.org/doc/2.x/templates.html">http://twig.sensiolabs.org/doc/2.x/templates.html</a></li>
+        <li>Macros see http://twig.sensiolabs.org/doc/2.x/tags/macro.html and menu.html.twig </li>
+        <li>https://api.drupal.org/api/drupal/core!lib!Drupal!Core!Template!TwigExtension.php/class/TwigExtension/8.2.x</li>
+</ul>

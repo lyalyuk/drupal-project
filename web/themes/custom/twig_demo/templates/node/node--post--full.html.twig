@@ -1,0 +1,27 @@
+
+<div class="top-hero {% if content.field_image is empty %} gray-style {% endif %}"
+     {% if content.field_image %} style="background-image: url('{{ content.field_image|parse_image_url }}')" {% endif %}>
+    {% if breadcrumbs %}
+        <ul class="breadcrumbs">
+            {% for bc in breadcrumbs %}
+                <li>
+                    {{ bc }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="hero-text">
+        <div class="sub-title">
+            <span>{{ node.changed.value|date("d/m/Y") }}</span>
+            <span>{{ content.field_post_type}}</span>
+        </div>
+        <h1>{{ elements['#title']}}</h1>
+        <div class="description">
+            {{ content.body }}
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    {{ content.field_paragraphs }}
+</div>

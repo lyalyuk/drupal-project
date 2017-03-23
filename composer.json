@@ -28,7 +28,9 @@
         "drupal/layout_plugin": "*",
         "drupal/entityqueue": "*",
         "drupal/image_url_formatter": "*",
-        "drupal/ds": "~2"
+        "drupal/ds": "~2",
+        "drupal/migrate_plus": "^2.0",
+        "drupal/migrate_ui": "^1.1"
     },
     "require-dev": {
         "behat/mink": "~1.7",

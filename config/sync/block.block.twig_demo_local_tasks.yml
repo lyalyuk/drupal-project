@@ -1,0 +1,22 @@
+uuid: 4026bf47-bd49-4d78-9df9-8a4606dedb0d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - twig_demo
+_core:
+  default_config_hash: c-06bbElRY5sKmglk74ppgTW93Et4-EJFyNiUZMb8JY
+id: twig_demo_local_tasks
+theme: twig_demo
+region: content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
