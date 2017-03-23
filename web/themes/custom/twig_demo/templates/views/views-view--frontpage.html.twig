@@ -120,7 +120,7 @@ dom_id ? 'js-view-dom-id-' ~ dom_id,
 <ul>
         <li>file_url: {{ file_url('core/modules/system/tests/modules/twig_theme_test/twig_theme_test.js') }}</li>
         <li>url() - build url from route - {{ url('user.register', {}, {'absolute': true })  }} </li>
-        <li>link via the linkgenerator: {{ link('register', 'route:user.register', {'id': 'register'}) }}</li>
+        <li>link() - builds link - {{ link('register', 'route:user.register', {'id': 'register'}) }}</li>
         <li>attach_library() - Attach drupal library - {{ attach_library('classy/forum') }} </li>
 </ul>
 
