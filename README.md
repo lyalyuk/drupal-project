@@ -41,6 +41,12 @@
      - form.html.twig
      - ...
 3. Twig Introduction
-  - http://twig.sensiolabs.org/doc/2.x/templates.html#variables
+  - see /web/themes/custom/twig_demo/templates/views/views-view-unformatted--main-slider.html.twig
+  - Read http://twig.sensiolabs.org/doc/2.x/templates.html
+4. Twig Js
+  - https://github.com/twigjs/twig.js/wiki
+  - http://codepen.io/lizsterine/pen/YWKYyO
+  
+
 
  
